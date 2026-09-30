@@ -9,7 +9,7 @@ let contador
 let codigo = prompt("Introduce un código de seguridad: ")
 
 do{
-    let caracter = prompt("Introduce un caracter alfabético: ")
+    let caracter = prompt("Introduce un caracter alfabético: ").toLowerCase
 }while (caracter.length > 1) 
 
 for (let i = 0; i < codigo.length; i++) {

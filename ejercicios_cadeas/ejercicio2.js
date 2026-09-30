@@ -6,13 +6,14 @@
 //################################################################################
 // Escribe tu código aquí
 
-let codigoReserva = "PAD-1023"
+let codigoReserva = prompt("Introduce el código de reserva:")
 
-if(codigoReserva.startsWith("PAD")){
-    console.log("Actividad: Pádel")
-}ifelse (codigoReserva.startsWith("FUT")) {
-    console.log("Actividad: Fútbol")
-} else {
-    console.log("No existe ese código...")
+if (codigoReserva !== null) {
+    if (codigoReserva.startsWith("PAD")) {
+        console.log("Actividad: Pádel")
+    } else if (codigoReserva.startsWith("FUT")) {
+        console.log("Actividad: Fútbol")
+    } else {
+        console.log("No existe ese código...")
+    }
 }
-
