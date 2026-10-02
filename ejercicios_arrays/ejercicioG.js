@@ -12,8 +12,6 @@ for (let i = 0; i < vector1.length; i++) {
     vector2[i] = parseInt(prompt(`Introduce el ${i+1}er número del vector2: `));
 }
 
-const vector3 = vector1.map(function(num, i, arr){
-    return num * vector2[i]
-})
+const vector3 = vector1.map((num, i) => (num * vector2[i]))
 
 console.log(vector3)

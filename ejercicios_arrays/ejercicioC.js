@@ -4,32 +4,13 @@
 // y cuántas son aprobado (>=5).
 //################################################################################
 
+let notas = Array.from({lenght: 6}, (_, i) => parseInt(prompt(`Dime la ${i+1}º nota: `)))
 
-const notas = new Array(5)
-var suma = 0, alta = 0, baja = 11, aprobado = 0
-
-for (let i = 0; i < notas.length; i++) {
-    do{
-    notas[i] = prompt(`Introduce la ${i+1}ª nota: `)
-    }while (notas[i] < 0 || notas[i] > 10)
-    
-    if (notas[i] > alta) {
-        alta = notas[i]
-    }
-    if (notas[i] < baja) {
-        baja = notas[i]
-    }
-
-    suma += notas[i]
-
-    if (notas[i] >= 5) {
-        aprobado++
-    }
-}
+let aprobados = notas.filter(x => x >= 5).length
 
 console.log(`${notas}
-    Nota máis alta: ${alta}
-    Nota máis baixa: ${baja}
-    Media das notas: ${(suma)}
+    Nota máis alta: ${notas.sort((a,b) => a-b)[notas.length - 1]}
+    Nota máis baixa: ${notas.sort((a,b) => b-a)[notas.length - 1]}
+    Media das notas: ${(notas.reduce((sum, x) => {sum += x})/notas.length).toFixed(2)}
     Núm de aprobados: ${aprobado}`)
 

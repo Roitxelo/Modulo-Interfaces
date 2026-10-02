@@ -5,11 +5,7 @@
 //################################################################################
 
 
-const vector = new Array(4)
-
-for (let i = 0; i < vector.length; i++) {
-    vector[i] = prompt(`Introduce la ${i+1} cadena:`)
-}
+const vector = Array.from({length: 7}, (_, i) => prompt(`Introduce la ${i+1} cadena:`))
 
 const vector2 = vector.map((cadena) => cadena.split("").reverse().join(""))
 
