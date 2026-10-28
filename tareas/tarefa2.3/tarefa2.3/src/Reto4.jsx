@@ -12,7 +12,7 @@
 // Como usalo: copia este código en src/App.jsx.
 // Comproba que non hai avisos na consola do navegador.
 
-// import { Fragment } from "react";
+import { Fragment } from "react";
 
 const pasos = [
   { id: 1, texto: "Executa npm run build." },
@@ -22,7 +22,12 @@ const pasos = [
 ];
 
 export default function App() {
-  const elementos = pasos.map((paso) => <p key={paso.id}>{paso.texto}</p>);
+  const elementos = pasos.map((paso, indice) => (
+    <Fragment key={paso.id}>
+        {(indice > 0) && <hr />}
+      <p>{paso.texto}</p>
+    </Fragment>
+  ));
 
   return (
     <article>
