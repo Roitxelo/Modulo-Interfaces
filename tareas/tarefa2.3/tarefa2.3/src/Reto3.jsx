@@ -14,14 +14,20 @@ const libros = [
   { id: 4, titulo: "Memorias dun neno labrego", autor: "Xosé Neira Vilas", ano: 1961 },
 ];
 
-export default function App() {
-  const elementos = libros.map((libro) => (
-    <li key={libro.id}>
+function Libro({libro}){
+  return (
+    <li>
       <h3>{libro.titulo}</h3>
       <p>
         {libro.autor}, {libro.ano}
       </p>
     </li>
+  )
+}
+
+export default function App() {
+  const elementos = libros.map((libro) => (
+      <Libro key={libro.id} libro={libro} />
   ));
 
   return (
