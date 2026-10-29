@@ -24,7 +24,7 @@ const pasos = [
 export default function App() {
   const elementos = pasos.map((paso, indice) => (
     <Fragment key={paso.id}>
-        {(indice > 0) && <hr />}
+        {(indice > 0) && <hr />}  
       <p>{paso.texto}</p>
     </Fragment>
   ));
