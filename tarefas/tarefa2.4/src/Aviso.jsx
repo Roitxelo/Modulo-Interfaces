@@ -1,5 +1,5 @@
-import "./Aviso.css";
+import styles from "./Aviso.module.css";
 
 export default function Aviso() {
-  return <div className="card">Son o aviso</div>;
+  return <div className={styles.card}>Son o aviso</div>;
 }
