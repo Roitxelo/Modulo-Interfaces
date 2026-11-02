@@ -1,4 +1,6 @@
 import "./App.css"
+import MigasDePan from "./MigasDePan"
+import BadgeDispo from "./BadgeDispo"
 
 function Boton({pista}) {
     return (
@@ -8,11 +10,11 @@ function Boton({pista}) {
                     src={pista.imagen}
                     alt={pista.alternativo} />
                 <span className="contenido_visual">
-                        {pista.libre ? (
-                            <span className="dispo">Dispoñible</span>
-                        ) : (
-                            <span className="nondispo">Non dispoñible</span>
-                        )}
+                    <BadgeDispo 
+                        texto={pista.libre ? "Dispoñible" : "Non dispoñible"}
+
+                        // TEMAS DISPONIBLES: Primary Accent Success Danger Warning Info Inverse Secondary
+                        tema={pista.libre ? "success" : "danger"}/>
                     <span className="titulo_pista">{pista.titulo}</span>
                     <span className="desc_pista">{pista.descripcion}</span>
                 </span>
@@ -60,6 +62,7 @@ const pistas = [(
 export default function Reservas(){
     return (
         <div>
+            <MigasDePan elementos={["Inicio", "Reservas", "Pistas"]} />
             <h1>RESERVA XA!</h1>
             <h2>Escolle pista: </h2>
             <p>Mostrámosche as pistas e a súa dispoñibilidade</p>
