@@ -52,11 +52,29 @@ export default function Taboleiro({xTurno, cadrados, onXogar}) {
 
   }
 
+  const filas = []
+
+  for (let fila = 0; fila < 3; fila++) {
+    const columnas = []
+
+  for (let columna = 0; columna < 3; columna++) {
+    const index = fila * 3 + columna
+
+    columnas.push( <Cadrado key={index} valor={cadrados[index]} onCadradoClick={() => handleClick(index)} ganador={lineaGanadora.includes(index)}/> )
+  }
+
+  filas.push(
+    <div className="board-row" key={fila}>
+      {columnas}
+    </div>
+  )
+}
+
   return (
     <>
       <div className="estado">{estado}</div>
       <div className="taboleiro">
-        {cadrados.map((c, index) => (<Cadrado key={index} valor={c} onCadradoClick={() => handleClick(index) } ganador={lineaGanadora.includes(index)}/>))}
+        {filas}
       </div>
     </>
   )
