@@ -1,0 +1,58 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.board-row {
+  display: flex;
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: white;
+  border: 1px solid #999;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.squareGanador{
+    width: 80px;
+  height: 80px;
+  background-color: rgba(60, 233, 83, 0.459);
+  border: 1px solid #999;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.square:hover {
+  background-color: #e0e0e0;
+}
+
+.square:focus {
+  outline: none;
+}
+
+.square:active {
+  background-color: #ccc;
+}
+
+.estado {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
